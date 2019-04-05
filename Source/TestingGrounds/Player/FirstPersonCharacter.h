@@ -57,11 +57,16 @@ public:
 	/** Gun muzzle's offset from the characters location */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	FVector GunOffset;
+	/** Gun */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Setup)
+	TSubclassOf<class AGun> GunBlueprint;
 
 
 	/** Whether to use motion controller location for aiming. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	uint32 bUsingMotionControllers : 1;
+private:
+	AGun* Gun;
 
 protected:
 	

@@ -34,7 +34,10 @@ public:
 	class UAnimMontage* FireAnimation;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-		class UAnimInstance* AnimInstance;
+	class UAnimInstance* AnimInstance;
+
+	/** Fires a projectile. */
+	void OnFire();
 private:
 	/** Gun mesh: 1st person view (seen only by self) */
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
@@ -43,9 +46,4 @@ private:
 	/** Location on gun mesh where projectiles should spawn. */
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 	class USceneComponent* FP_MuzzleLocation;
-
-protected:
-	
-	/** Fires a projectile. */
-	void OnFire();
 };
